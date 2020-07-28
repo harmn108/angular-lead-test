@@ -1,4 +1,4 @@
-<div *ngIf="groupsList && groupsList.length" cdkDropList class="group-list" (cdkDropListDropped)="drop($event)">
+<div *ngIf="groupsList && groupsList.length" cdkDropList class="group-list" (cdkDropListDropped)="dropGroup($event)">
   <div class="group-box" *ngFor="let group of groupsList; let i = index" cdkDrag>
     <div class="group-custom-placeholder" *cdkDragPlaceholder></div>
     <div class="group-box__title">
@@ -123,7 +123,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;" cdkDragLockAxis="y" cdkDrag [cdkDragData]="row">
         </tr>
       </table>
-      <button mat-button (click)="addNewTableItem(group.groupItems)" class="new-item-btn">Add new item</button>
+      <button (click)="addNewTableItem(group.groupItems)" class="new-item-btn">Add new item</button>
     </div>
 
   </div>
